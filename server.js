@@ -9,7 +9,7 @@ const cors = require("cors")
 const conn = require("./database/conn")
 const File = require("./modal/modal");
 const nodemailer = require("nodemailer")
-const port = 8080 || process.env.PORT
+const port = process.env.PORT || 8080
 
 const app = express()
 
