@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FShare</title>
+    <link rel="icon" href="src/icon8.png" type="image/x-icon">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <section>
+        <div class="drop-box">
+            <img src="src/icon8.png" alt="file icon" class="icon_center" draggable="false">
+            <img src="src/icon8.png" alt="file icon" class="icon_right" draggable="false">
+            <img src="src/icon8.png" alt="file icon" class="icon_left" draggable="false">
+            <span class="text">Drag & Drop your file here or,</span>&nbsp;<span class="browse">Browse</span>
+            <input type="file" name="file" id="file" />
+        </div>
+        
+        <div>
+            <div class="progres_div">
+                <span class="uploading_per">uploading 10%</span>
+                <div class="progress"></div>
+            </div>
+            <p>link will expire in 24 hour</p>
+            <div class="link_to_download">
+                
+                <input type="text" class="link_text" value="" readonly />&nbsp;<i class="far fa-copy"></i>
+            </div>    
+        </div>
+        <p>or send via email</p>
+        <div class="form-div">
+            <form autocomplete="on" class="email_form">
+                <div class="field">
+                <label for="sender">Your Email</label>
+                <input type="email" class="sender" id="sender" />
+                </div>
+                <div class="field">
+                <label for="receiver" >Receiver Email</label>
+                <input type="email" class="receiver" id="receiver" />
+                </div>
+            <button type="submit" class="email_submit" >Submit</button>
+            </form>
+        </div>
+    </section>
+        <div class="toast">
+        </div>
+    <div class="loader">
+        <img src="src/359.gif" alt="">
+    </div>
+    <script src="js/body.js"></script>
+</body>
+</html>
