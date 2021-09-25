@@ -1,10 +1,14 @@
 const mongoose = require('mongoose');
 require("dotenv").config()
 
-const connection = mongoose.connect(process.env.MONGODB,{
+mongoose.connect(process.env.MONGODB,{
     useNewUrlParser:true,
-    useUnifiedTopology:true
-}).then(()=>console.log("Connection Succesfull!"))
-  .catch(err=>console.log(err))
+    useUnifiedTopology:true,
+})
+const connection = mongoose.connection;
+
+connection.once('open',()=>{
+  console.log("Connection Started")
+})
 
 module.exports = connection;
