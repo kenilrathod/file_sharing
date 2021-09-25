@@ -5,12 +5,18 @@ const multer = require("multer")
 const hbs = require('hbs');
 require("dotenv").config()
 const {v4:uuid4} = require("uuid")
+const cors = require("cors")
 const conn = require("./database/conn")
 const File = require("./modal/modal");
 const nodemailer = require("nodemailer")
 const port = 8080 || process.env.PORT
 
 const app = express()
+
+const corsOption = {
+    origin:process.env.CLIENT.split(',')
+}  
+app.use(cors(corsOption))
 app.set("view engine","hbs")
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}))
@@ -42,6 +48,7 @@ hbs.registerHelper("if_gt",(a,b,opts)=>{
     else
         return opts.reverse(this)
 })
+
 
 app.get("/",(req,res)=>{
     res.render("home");
