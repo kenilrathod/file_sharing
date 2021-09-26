@@ -68,7 +68,7 @@ app.post("/file-share",(req,res)=>{
 
     });
     const response = await file.save();
-    return res.json({file_link:`${process.env.SITE_HOST}/files/${response.uuid}`})
+    return res.json({file_link:`${process.env.SITE_HOST}files/${response.uuid}`})
     })
 })
 

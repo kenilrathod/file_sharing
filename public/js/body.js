@@ -87,7 +87,7 @@ const uploadFile = () => {
     xhr.onreadystatechange = () => {
         if(xhr.readyState === XMLHttpRequest.DONE){
             response = xhr.response;
-            console.log(rersponse)
+            console.log(response)
         }
     };
 
