@@ -72,7 +72,7 @@ app.post("/file-share",(req,res)=>{
     })
 })
 
-app.get("/files/:uuid",async(req,res)=>{
+app.get("files/:uuid",async(req,res)=>{
     const result = await File.findOne({uuid:req.params.uuid})
     if(!result){
         return res.render("download",{error:"File not found it might be deleted"})
@@ -85,7 +85,7 @@ app.get("/files/:uuid",async(req,res)=>{
     })
 })
 
-app.get("/files/download/:uuid",async(req,res)=>{
+app.get("files/download/:uuid",async(req,res)=>{
     const result = await File.findOne({uuid:req.params.uuid})
     if(!result){
         return res.render("download",{error:"File can be Expired or deleted"})
@@ -96,7 +96,7 @@ app.get("/files/download/:uuid",async(req,res)=>{
 })
 //email 
 
-app.post("/files/send/:uuid",async(req,res)=>{
+app.post("files/send/:uuid",async(req,res)=>{
     if(!req.body.uuid || !req.body.from || !req.body.to)
         return res.status(422).json({
             success:false,
