@@ -141,6 +141,6 @@ app.post("/files/send/:uuid",async(req,res)=>{
     }    
 })
 
-app.listen(port,()=>{
+app.listen(8080,()=>{
     console.log("Started")
 })

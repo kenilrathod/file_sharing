@@ -14,7 +14,7 @@ var toast = document.querySelector(".toast");
 var email_form = document.querySelector(".email_form");
 var loader = document.querySelector(".loader")
 var response = "";
-var host = "https://file-share-application.herokuapp.com/"
+var baseUrl = "https://file-share-application.herokuapp.com/"
 
 drop_box.addEventListener("dragover",(e)=>{
     e.preventDefault();
@@ -57,7 +57,7 @@ email_form.addEventListener("submit",async(e)=>{
         from:email_form.elements["sender"].value,
         to:email_form.elements["receiver"].value
     }
-    fetch(`/files/send/${document.querySelector(".link_text").value.split("/")[4]}`,{
+    fetch(`${baseUrl}files/send/${document.querySelector(".link_text").value.split("/")[4]}`,{
         method:'POST',
         headers:{
             "Content-Type":"application/json"
@@ -98,7 +98,7 @@ const uploadFile = () => {
         showtoast("<i class='fas fa-exclamation-triangle'></i>&nbsp;<span>Error! file not upload</span>","#d9534f")
         file.value = "";
     }
-    xhr.open("POST",`${host}/file-share`);
+    xhr.open("POST",`${baseUrl}file-share`);
     xhr.send(formData)
 }
 
