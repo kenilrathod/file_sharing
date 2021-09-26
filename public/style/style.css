@@ -10,8 +10,7 @@ body{
     flex-direction:column;
     align-items: center;
     justify-content: space-evenly;
-    /* overflow: hidden */
-    /* background-color:#f5fcff */
+    overflow-y: scroll;
 }
 
 section{
@@ -47,7 +46,6 @@ section .drop-box {
     text-align: center;
     transition:transform 2s ease-out;
 }
-
 
 .drop-box img{
     position: absolute;
@@ -95,6 +93,7 @@ section .drop-box {
 .link_to_download{
     position: relative;
     margin-top: 10px;
+    margin-bottom: 5px;
     width:450px;
     overflow:hidden;
     border:3px dashed #234E70;
@@ -176,6 +175,7 @@ p {
     border:0;
     outline:0;
     border-bottom: 3px solid #234E70;
+    background-color:#f5fcff;
     font-size:16px;
     padding-left: 3px;
     padding-bottom:5px;
@@ -245,6 +245,9 @@ p {
         width:92% !important;
         margin:5px 0px;
     }
+    p{
+        font-size:16px
+    }
     .text{
         font-size:16px
     }
@@ -275,15 +278,19 @@ p {
 @media screen and (max-width:432px) {
     section {
         width:355px;
-        min-height:250px;
+        min-height:200px;
         border-radius: 12px;
     }
     .drop-box {
-        height:200px !important;
+        height:180px !important;
         margin:5px 0px;
     }
+    p{
+        font-size:12px;
+        margin-top:2px
+    }
     .text{
-        font-size:13px
+        font-size:13px;
     }
     .browse{
         font-size:15px
@@ -292,11 +299,15 @@ p {
         width:350px;
         border-radius: 5px;
     }
+    .progres_div span{
+        font-size:12px;
+        font-weight:400
+    }
     .link_to_download input{
-        font-size:16px
+        font-size:15px
     }
     .form-div{
-        width:92% !important;
+        width:96% !important;
         padding:20px 30px;
     }
     .field label {
@@ -305,6 +316,9 @@ p {
     .progres_div{
         width:342px;
         margin-bottom: 10px;
+    }
+    .toast{
+        font-size:16px;
     }
 }
 /* end of media Query */

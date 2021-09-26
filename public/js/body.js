@@ -141,7 +141,7 @@ const showtoast = (msg,bg) => {
     clearTimeout(time)
     toast.innerHTML = msg
     toast.style.backgroundColor = bg
-    toast.style.top = "20px"
+    toast.style.top = "15px"
     time = setTimeout(()=>{
         toast.style.top = "-100px"
     },2300)

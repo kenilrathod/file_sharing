@@ -383,14 +383,8 @@ module.exports = ({emailFrom, downloadLink, size, expires}) => {
                         Powered by FShare.
                       </td>
                     </tr>
-                    <tr>
-                      <td>
-                        &nbsp;<img src="src/My Post.png" alt="icon" class="icon" />
-                      </td>
-                    </tr>
                   </table>
                 </div>
-    
               </div>
             </td>
             <td>&nbsp;</td>
