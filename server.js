@@ -72,7 +72,7 @@ app.post("/file-share",(req,res)=>{
     })
 })
 
-app.get("files/:uuid",async(req,res)=>{
+app.get(`${process.env.SITE_HOST}files/:uuid`,async(req,res)=>{
     const result = await File.findOne({uuid:req.params.uuid})
     if(!result){
         return res.render("download",{error:"File not found it might be deleted"})
@@ -81,11 +81,11 @@ app.get("files/:uuid",async(req,res)=>{
         uuid:result.uuid,
         file:result.filename,
         size:parseInt(result.size/1E3),
-        downloadlink:`${process.env.SITE_HOST}/files/download/${result.uuid}`,
+        downloadlink:`${process.env.SITE_HOST}files/download/${result.uuid}`,
     })
 })
 
-app.get("files/download/:uuid",async(req,res)=>{
+app.get(`${process.env.SITE_HOST}files/download/:uuid`,async(req,res)=>{
     const result = await File.findOne({uuid:req.params.uuid})
     if(!result){
         return res.render("download",{error:"File can be Expired or deleted"})
@@ -96,7 +96,7 @@ app.get("files/download/:uuid",async(req,res)=>{
 })
 //email 
 
-app.post("files/send/:uuid",async(req,res)=>{
+app.post(`${process.env.SITE_HOST}files/send/:uuid`,async(req,res)=>{
     if(!req.body.uuid || !req.body.from || !req.body.to)
         return res.status(422).json({
             success:false,
@@ -120,7 +120,7 @@ app.post("files/send/:uuid",async(req,res)=>{
         text:"Nothing to say",
         html: require("./services/emailtamplates")({
             emailFrom:req.body.from,
-            downloadLink:`${process.env.SITE_HOST}/files/${find_file.uuid}`,
+            downloadLink:`${process.env.SITE_HOST}files/${find_file.uuid}`,
             size:parseInt(find_file.size/1E3)+' KB',
             expires:"24 hours"
         })
