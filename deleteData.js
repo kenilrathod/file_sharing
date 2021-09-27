@@ -17,4 +17,4 @@ const deleteExpireddata = async() => {
     }
 }
 
-deleteExpireddata().then(process.exit);
+

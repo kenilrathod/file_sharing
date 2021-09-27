@@ -8,8 +8,17 @@ const {v4:uuid4} = require("uuid")
 const cors = require("cors")
 const conn = require("./database/conn")
 const File = require("./modal/modal");
-const nodemailer = require("nodemailer")
+const nodemailer = require("nodemailer");
+const deleteExpireddata = require("./deleteData")
 const port = process.env.PORT || 8080
+
+//delete data if hour is 21
+const now_hour = new Date(Date.now())
+if(now_hour.getHours() == 21){
+    deleteExpireddata().then(process.exit);
+}
+
+
 
 const app = express()
 
